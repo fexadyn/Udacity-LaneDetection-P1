@@ -10,15 +10,22 @@ In this project, we will find lane lines on image and video sequences.
 My pipeline consisted of 5 steps. 
 
 1. I converted the images to grayscale
+
 ![png](test_images_output/grayscale.png)
+
 2. Applied region of interest mask. Here, I assumed car is moving roughly between two lane lines
 3. Applied simple binary thresholding. Alternatively, otsu's thresholding method can be used in order to deal with illumination changes
 4. Applied gaussian filtering and canny edge detection
+
 ![png](test_images_output/roi_and_canny.png)
+
 5. Applied hough line extraction method
+
 ![png](test_images_output/hough.png)
+
 6. From many line segments, decided which segments belong to left and right lanes lines by checking the slope of line segments and absolute x coordinates of segments.
 7. Fitted a line to left and right line segments to obtain smoother and more robust estimation.
+
 ![png](test_images_output/hough_interpolated.png)
 
 ### 2. Potential shortcomings of my pipeline
